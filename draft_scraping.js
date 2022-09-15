@@ -2,9 +2,7 @@ const high_school_url = 'https://www.jhbf.or.jp/pro-aspiring/2022.html';
 const university_url = 'https://www.jubf.net/system/prog/procandidate.php?kind=all&year=2022';
 
 // シートの指定．GoogleスプレッドシートのURLの「https://docs.google.com/spreadsheets/d/***************************************/edit#gid=0」の部分を使う．
-// 仮想ドラフト：https://docs.google.com/spreadsheets/d/18Iz8F5lOjRCKeRIlET4U05Xt07InRIaclQPf2cY4Lsw/edit#gid=1398401735
-// https://docs.google.com/spreadsheets/d/1LZeh2tO-S3YMwmqDUSSc9furSXYiE6j4XasdlETQepA/edit#gid=0
-const sheet_id = '1LZeh2tO-S3YMwmqDUSSc9furSXYiE6j4XasdlETQepA'
+const sheet_id = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 // 最終行を取得　別シートで定義
 // 固定定数
 const count_row = 2;
