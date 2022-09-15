@@ -27,3 +27,28 @@ claspを使ってGASにあげる
     - sendMail  
         -> メール送信を行う  
 
+## 使い方
+0. draft_scraping.jsを落としている前提で行う  
+1. 自動で入力するgoogle sheetsを作成する  
+2. 入力シートの名前を現在の年に変更する
+    -> 現在が2022/09/16なら、シートの名前を「2022」にする  
+3. URLのd/から/editで囲まれている文字列をコピーする  
+    -> 以下のURLでいうとXが並んでいるところ  
+        https://docs.google.com/spreadsheets/d/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/edit#gid=1176042870
+
+4. 2でコピーしたものをdraft_scraping.jsのsheet_idに代入されるように書き換える  
+    - 変更前  
+        -> sheet_id = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'  
+    - 変更後  
+        -> sheet_id = '2でコピーした文字列'  
+
+    これで動かす準備は出来た(はず...)
+
+5. claspの導入を行う  
+
+
+
+
+
+
+
