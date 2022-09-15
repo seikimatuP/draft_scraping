@@ -45,7 +45,7 @@ const high_school_players_flg = 1;
 const setTrigger_flg = 1;
 
 //メール送信に使う定数
-const recipient = 'hibikiimas71@gmail.com';
+const recipient = 'example@email.com';
 const subject = 'プロ志望届 実行';
 const body = 'プロ志望届スクレイピング終わった \n https://docs.google.com/spreadsheets/d/1LZeh2tO-S3YMwmqDUSSc9furSXYiE6j4XasdlETQepA/edit#gid=1176042870';
 
