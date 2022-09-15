@@ -1,0 +1,20 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "Parser",
+      "libraryId": "1Mc8BthYthXx6CoIz90-JiSzSafVnT6U3t0z_W3hLTAX5ek4w0G_EIrNw",
+      "version": "7"
+    }, {
+      "userSymbol": "TwitterWebService",
+      "libraryId": "1rgo8rXsxi1DxI_5Xgo_t3irTw1Y5cxl2mGSkbozKsSXf2E_KBBPC3xTF",
+      "version": "2"
+    }, {
+      "userSymbol": "Twitter",
+      "libraryId": "1MTlwVkFFuodBjORCgHb0pFRc9yAd040oW4Kqu8TPdGtyfEfJwuI2mHSA",
+      "version": "1"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
