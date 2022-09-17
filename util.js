@@ -54,3 +54,47 @@ const set_trigger_function_name = 'player_list_update';
 const set_hour = 17;
 const set_minutes = 20;
 const set_seconds = 00;
+
+// A:yyyy高校生_high_school
+const header_range_high_school = 'A1';
+const header_text_high_school = '高校生_high_school';
+// B:yyyy高校生_name
+const header_range_high_school_name = 'B1';
+const header_text_high_school_name = '高校生_name';
+// C:yyyy高校生_day
+const header_range_high_school_day = 'C1';
+const header_text_high_school_day = '高校生_day';
+// D:yyyy高校生_sum
+const header_range_high_school_sum = 'D1';
+const header_text_high_school_sum = '高校生_sum';
+// E:yyyy大学生_university
+const header_range_university = 'E1';
+const header_text_university = '大学生_university';
+// F:yyyy大学生_name
+const header_range_university_name = 'F1';
+const header_text_university_name = '大学生_name';
+// G:yyyy大学生_day
+const header_range_university_day = 'G1';
+const header_text_university_day = '大学生_day';
+// H:yyyy大学生_sum
+const header_range_university_sum = 'H1';
+const header_text_university_sum = '大学生_sum';
+// I:id
+const header_range_id = 'I1';
+const header_text_id = 'id';
+// J:スクリプト実施日
+const header_range_exec_day = 'J1';
+const header_text_exec_day = 'スクリプト実施日';
+// K:高校生
+const header_range_high_school_summary = 'K1';
+// L:大学生
+const header_range_university_summary = 'L1';
+// M:前回比_高校生
+const header_range_high_school_day_over_day = 'M1';
+const header_text_high_school_day_over_day = '前回比_高校生';
+// N:前回比_大学生
+const header_range_university_day_over_day = 'N1';
+const header_text_university_day_over_day = '前回比_大学生';
+
+const sum_chart_title = 'カテゴリー別プロ志望届提出者推移';
+const increment_chart_title = 'カテゴリー別プロ志望届提出者の増分';
