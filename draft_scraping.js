@@ -168,33 +168,33 @@ function createSheet(year) {
 
   // ヘッダー追加
   // A:yyyy高校生_high_school
-  new_sheet.getRange('A1').setValue(year + '高校生_high_school');
+  new_sheet.getRange(header_range_high_school).setValue(year + header_text_high_school);
   // B:yyyy高校生_name
-  new_sheet.getRange('B1').setValue(year + '高校生_name');
+  new_sheet.getRange(header_range_high_school_name).setValue(year + header_text_high_school_name);
   // C:yyyy高校生_day
-  new_sheet.getRange('C1').setValue(year + '高校生_day');
+  new_sheet.getRange(header_range_high_school_day).setValue(year + header_text_high_school_day);
   // D:yyyy高校生_sum
-  new_sheet.getRange('D1').setValue(year + '高校生_sum');
+  new_sheet.getRange(header_range_high_school_sum).setValue(year + header_text_high_school_sum);
   // E:yyyy大学生_university
-  new_sheet.getRange('E1').setValue(year + '大学生_university');
+  new_sheet.getRange(header_range_university).setValue(year + header_text_university);
   // F:yyyy大学生_name
-  new_sheet.getRange('F1').setValue(year + '大学生_name');
+  new_sheet.getRange(header_range_university_name).setValue(year + header_text_university_name);
   // G:yyyy大学生_day
-  new_sheet.getRange('G1').setValue(year + '大学生_day');
+  new_sheet.getRange(header_range_university_day).setValue(year + header_text_university_day);
   // H:yyyy大学生_sum
-  new_sheet.getRange('H1').setValue(year + '大学生_sum');
+  new_sheet.getRange(header_range_university_sum).setValue(year + header_text_university_sum);
   // I:id
-  new_sheet.getRange('I1').setValue('id');
+  new_sheet.getRange(header_range_id).setValue(header_text_id);
   // J:スクリプト実施日
-  new_sheet.getRange('J1').setValue('スクリプト実施日');
+  new_sheet.getRange(header_range_exec_day).setValue(header_text_exec_day);
   // K:高校生
-  new_sheet.getRange('K1').setValue('高校生');
+  new_sheet.getRange(header_range_high_school_summary).setValue(header_text_high_school);
   // L:大学生
-  new_sheet.getRange('L1').setValue('大学生');
+  new_sheet.getRange(header_range_university_summary).setValue(header_text_university);
   // M:前回比_高校生
-  new_sheet.getRange('M1').setValue('前回比_高校生');
+  new_sheet.getRange(header_range_high_school_day_over_day).setValue(header_text_high_school_day_over_day);
   // N:前回比_大学生
-  new_sheet.getRange('N1').setValue('前回比_大学生');
+  new_sheet.getRange(header_range_university_day_over_day).setValue(header_text_university_day_over_day);
 }
 
 // グラフの作成 増分グラフ-> M:N 合計グラフ-> K:L列からデータ取得
@@ -210,7 +210,7 @@ function createChart(year) {
     .addRange(range_sum)
     .setChartType(Charts.ChartType.LINE)
     .setPosition(25, 15, 0, 0) //buildメソッドの前に、挿入場所を指定するsetPositionを加えます。
-    .setOption('title', 'カテゴリー別プロ志望届提出者推移')
+    .setOption('title', sum_chart_title)
     .setOption('useFirstColumnAsDomain', false)
     .setNumHeaders(1)
     .build();
@@ -219,7 +219,7 @@ function createChart(year) {
     .addRange(range_increment)
     .setChartType(Charts.ChartType.LINE)
     .setPosition(1, 15, 0, 0) //buildメソッドの前に、挿入場所を指定するsetPositionを加えます。
-    .setOption('title', 'カテゴリー別プロ志望届提出者の増分')
+    .setOption('title', increment_chart_title)
     .setOption('useFirstColumnAsDomain', false)
     .setNumHeaders(1)
     .build();
