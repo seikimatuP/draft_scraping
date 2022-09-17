@@ -128,8 +128,9 @@ function player_list_update(){
   var sheet = spreadsheet.getSheetByName(year);
   
   // シートがない場合、新規作成
-  if (sheet === null) {
+  if (sheet == null) {
     createSheetAndCart(year, spreadsheet);
+    var sheet = spreadsheet.getSheetByName(year);
   }
 
   //A1セルから[Ctrl + ↓]
