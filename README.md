@@ -45,7 +45,16 @@ claspを使ってGASにあげる
     これで動かす準備は出来た(はず...)
 
 5. claspの導入を行う  
+    コマンドプロンプトにて以下のコマンドを実行する  
+    claspはプロジェクト単位ではなく、全体で使うのでグローバル(-g)でインストール  
+    
+    ```
+    npm i @google/clasp -g
+    clasp login
+    ```
 
+    ログイン前に[GAS の API 設定画面](https://script.google.com/home/usersettings)を開いてオンにする  
+    ログインで google の承認画面が出てくると思うので承認する
 
 
 
