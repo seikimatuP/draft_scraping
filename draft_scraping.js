@@ -127,6 +127,11 @@ function player_list_update(){
   var spreadsheet = SpreadsheetApp.openById(sheet_id);
   var sheet = spreadsheet.getSheetByName(year);
   
+  // シートがない場合、新規作成
+  if (sheet === null) {
+    createSheetAndCart(year, spreadsheet);
+  }
+
   //A1セルから[Ctrl + ↓]
   var lastRow = sheet.getRange(sheet.getMaxRows(), 9).getNextDataCell(SpreadsheetApp.Direction.UP).getRow() + 1;
   if (university_players_flg || high_school_players_flg){
@@ -201,3 +206,81 @@ function sendMail(){
   GmailApp.sendEmail(recipient, subject, body, options);
 }
 
+// 年度初めシートがないので作成してグラフやヘッダー追加する
+function createSheetAndCart(year) {
+  // 新しいシート追加
+  createSheet(year);
+
+  // 作成したシートにグラフを追加
+  createChart(year);
+}
+
+// 年度初めシートがないので作成する
+function createSheet(year) {
+  // 新しいシート追加
+  const sheet = SpreadsheetApp.openById(sheet_id);
+  var new_sheet = sheet.insertSheet();
+  new_sheet.setName(year);
+
+  // ヘッダー追加
+  // A:yyyy高校生_high_school
+  new_sheet.getRange('A1').setValue(year + '高校生_high_school');
+  // B:yyyy高校生_name
+  new_sheet.getRange('B1').setValue(year + '高校生_name');
+  // C:yyyy高校生_day
+  new_sheet.getRange('C1').setValue(year + '高校生_day');
+  // D:yyyy高校生_sum
+  new_sheet.getRange('D1').setValue(year + '高校生_sum');
+  // E:yyyy大学生_university
+  new_sheet.getRange('E1').setValue(year + '大学生_university');
+  // F:yyyy大学生_name
+  new_sheet.getRange('F1').setValue(year + '大学生_name');
+  // G:yyyy大学生_day
+  new_sheet.getRange('G1').setValue(year + '大学生_day');
+  // H:yyyy大学生_sum
+  new_sheet.getRange('H1').setValue(year + '大学生_sum');
+  // I:id
+  new_sheet.getRange('I1').setValue('id');
+  // J:スクリプト実施日
+  new_sheet.getRange('J1').setValue('スクリプト実施日');
+  // K:高校生
+  new_sheet.getRange('K1').setValue('高校生');
+  // L:大学生
+  new_sheet.getRange('L1').setValue('大学生');
+  // M:前回比_高校生
+  new_sheet.getRange('M1').setValue('前回比_高校生');
+  // N:前回比_大学生
+  new_sheet.getRange('N1').setValue('前回比_大学生');
+}
+
+// グラフの作成 増分グラフ-> M:N 合計グラフ-> K:L列からデータ取得
+function createChart(year) {
+  const spreadSheet = SpreadsheetApp.openById(sheet_id);
+  const sheet = spreadSheet.getSheetByName(year);
+  //getRangeでA1からB6列を取得します。
+  const range_sum = sheet.getRange('K1:L1006');
+  const range_increment = sheet.getRange('M1:N1006');
+  //newChartメソッドで、グラフを作成します。addRangeに、先程取得したデータ範囲を設定します。
+  const sum_chart = sheet
+    .newChart()
+    .addRange(range_sum)
+    .setChartType(Charts.ChartType.LINE)
+    .setPosition(25, 15, 0, 0) //buildメソッドの前に、挿入場所を指定するsetPositionを加えます。
+    .setOption('title', 'カテゴリー別プロ志望届提出者推移')
+    .setOption('useFirstColumnAsDomain', false)
+    .setNumHeaders(1)
+    .build();
+  const increment_chart = sheet
+    .newChart()
+    .addRange(range_increment)
+    .setChartType(Charts.ChartType.LINE)
+    .setPosition(1, 15, 0, 0) //buildメソッドの前に、挿入場所を指定するsetPositionを加えます。
+    .setOption('title', 'カテゴリー別プロ志望届提出者の増分')
+    .setOption('useFirstColumnAsDomain', false)
+    .setNumHeaders(1)
+    .build();
+
+  //グラフをシートに挿入します
+  sheet.insertChart(sum_chart);
+  sheet.insertChart(increment_chart);
+}
