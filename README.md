@@ -29,9 +29,10 @@ claspを使ってGASにあげる
 
 ## 使い方
 0. draft_scraping.jsを落としている前提で行う  
-1. 自動で入力するgoogle sheetsを作成する  
-2. 入力シートの名前を現在の年に変更する
-    -> 現在が2022/09/16なら、シートの名前を「2022」にする  
+1. 自動で入力するgoogle sheetsを作成する    
+~~2. 入力シートの名前を現在の年に変更する~~  
+    ~~-> 現在が2022/09/16なら、シートの名前を「2022」にする~~  
+    不要になったので削除  
 3. URLのd/から/editで囲まれている文字列をコピーする  
     -> 以下のURLでいうとXが並んでいるところ  
         https://docs.google.com/spreadsheets/d/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/edit#gid=1176042870
@@ -47,7 +48,7 @@ claspを使ってGASにあげる
 5. claspの導入を行う  
     コマンドプロンプトにて以下のコマンドを実行する  
     claspはプロジェクト単位ではなく、全体で使うのでグローバル(-g)でインストール  
-    
+
     ```
     npm i @google/clasp -g
     clasp login
