@@ -26,6 +26,12 @@ claspを使ってGASにあげる
         -> 日付の平日判定を行う  
     - sendMail  
         -> メール送信を行う  
+    - createSheetAndCart  
+        -> 指定年のシートがない場合、シート・グラフ・ヘッダーの作成  
+    - createSheet  
+        -> シート・ヘッダー作成  
+    - createChart  
+        -> グラフ作成  
 
 ## 使い方
 0. draft_scraping.jsを落としている前提で行う  
@@ -57,7 +63,10 @@ claspを使ってGASにあげる
     ログイン前に[GAS の API 設定画面](https://script.google.com/home/usersettings)を開いてオンにする  
     ログインで google の承認画面が出てくると思うので承認する
 
-
+6. claspコマンドを使ってGASにあげる  
+    ```
+    clasp push
+    ```
 
 
 
